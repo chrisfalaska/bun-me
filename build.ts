@@ -1,11 +1,11 @@
 import { build } from "bun";
 
-async function runBuild() {
+async function buildProject() {
   const result = await build({
-    entrypoints: ['./src/index.ts'],
-    outdir: './dist',
-    target: 'node',
-    minify: true,
+    entrypoints: ['./index.ts'],
+    outdir: './public/dist',
+    target: 'browser',
+    format: 'esm',
   });
 
   if (!result.success) {
@@ -13,7 +13,7 @@ async function runBuild() {
     process.exit(1);
   }
 
-  console.log('Build completed successfully!');
+  console.log('Build completed successfully');
 }
 
-runBuild();
+buildProject();
