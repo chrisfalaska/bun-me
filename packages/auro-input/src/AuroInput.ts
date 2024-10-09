@@ -1,18 +1,26 @@
 import { LitElement, html, css } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
 
-export class MyInput extends LitElement {
+@customElement('my-element')
+export class MyElement extends LitElement {
   static styles = css`
-    input {
-      border: 1px solid #ccc;
-      padding: 5px;
+    :host {
+      display: block;
+      padding: 16px;
+      max-width: 800px;
+      margin: 0 auto;
     }
   `;
 
+  @property()
+  name = 'World';
+
   render() {
     return html`
-      <input type="text" placeholder="Enter text">
+      <h1>Hello, ${this.name}!</h1>
+      <p>Welcome to your Lit.js application.</p>
     `;
   }
 }
 
-customElements.define('my-input', MyInput);
+customElements.define('my-element', MyElement);

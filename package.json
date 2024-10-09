@@ -5,11 +5,15 @@
   "workspaces": [
     "packages/*"
   ],
+  "type": "module",
   "scripts": {
-    "dev": "bun run --watch index.ts",
-    "build": "bun run build.ts",
-    "serve": "bun run serve.ts",
-    "start": "bun run index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "build": "bun build ./src/index.ts --outdir ./dist",
+    "serve": "bun run --watch src/server.ts",
+    "start": "bun run dist/index.js"
+  },
+  "dependencies": {
+    "lit": "^3.0.0"
   },
   "devDependencies": {
     "bun": "latest",
