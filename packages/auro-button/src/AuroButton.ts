@@ -1,6 +1,8 @@
 import { LitElement, html, css } from 'lit';
+import { customElement } from 'lit/decorators.js';
 
-export class MyButton extends LitElement {
+@customElement('auro-button')
+export class AuroButton extends LitElement {
   static styles = css`
     button {
       background-color: blue;
@@ -17,5 +19,3 @@ export class MyButton extends LitElement {
     `;
   }
 }
-
-customElements.define('my-button', MyButton);

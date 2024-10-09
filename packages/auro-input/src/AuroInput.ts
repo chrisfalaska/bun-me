@@ -1,26 +1,21 @@
 import { LitElement, html, css } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
 
-@customElement('my-element')
-export class MyElement extends LitElement {
+@customElement('auro-input')
+export class AuroButton extends LitElement {
   static styles = css`
-    :host {
-      display: block;
-      padding: 16px;
-      max-width: 800px;
-      margin: 0 auto;
+    button {
+      background-color: blue;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
     }
   `;
 
-  @property()
-  name = 'World';
-
   render() {
     return html`
-      <h1>Hello, ${this.name}!</h1>
-      <p>Welcome to your Lit.js application.</p>
+      <button><slot></slot></button>
     `;
   }
 }
-
-customElements.define('my-element', MyElement);
