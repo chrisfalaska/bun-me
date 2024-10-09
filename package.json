@@ -9,8 +9,10 @@
   "scripts": {
     "dev": "bun run --watch src/index.ts",
     "build": "bun build ./src/index.ts --outdir ./dist",
+    "build:components": "bun run ./build.ts",
     "serve": "bun run --watch ./serve.ts",
-    "start": "bun run dist/index.js"
+    "start": "bun run dist/index.js",
+    "start:demo": "bun run build:components && bun run serve"
   },
   "dependencies": {
     "lit": "^3.0.0"
