@@ -2,8 +2,8 @@
 
 ### Installing
 
-$ bun install
+`$ bun install`
 
-$ bun build:components
+`$ bun build:components`
 
-$ bun:serve
+`$ bun:serve`
