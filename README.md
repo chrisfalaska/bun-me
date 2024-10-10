@@ -1,4 +1,4 @@
-# Auro + Vite + Bun + Monorepo
+# Auro + Bun + Monorepo
 
 ### Installing
 
